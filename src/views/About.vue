@@ -1,5 +1,17 @@
 <template>
 	<div class="about">
-		<h1>This is an about page</h1>
+		<MainContent msg="This is About Page" />
 	</div>
 </template>
+
+<script>
+// @ is an alias to /src
+import MainContent from '@/components/MainContent.vue';
+
+export default {
+	name: 'Home',
+	components: {
+		MainContent
+	}
+};
+</script>
