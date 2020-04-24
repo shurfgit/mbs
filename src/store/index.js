@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { DETAIL_VIEW_ITEM_MUTATION } from '../constants/mutation-types';
 
 Vue.use(Vuex);
 
@@ -87,7 +88,7 @@ export default new Vuex.Store({
 		]
 	},
 	mutations: {
-		updateDetailsItem(state, item) {
+		[DETAIL_VIEW_ITEM_MUTATION](state, item) {
 			state.selectedItem = item;
 		}
 	},

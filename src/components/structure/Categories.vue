@@ -37,7 +37,7 @@ export default {
 			}
 		},
 		selectItem: function(item) {
-			this.$store.commit('updateDetailsItem', item);
+			this.$store.commit('DETAIL_VIEW_ITEM_MUTATION', item);
 		}
 	}
 };
