@@ -10,7 +10,7 @@ export default {
 
 <style scoped>
 footer {
-	background-color: #384769;
+	background-color: #1f3102;
 	min-height: 25px;
 	position: absolute;
 	bottom: 0;

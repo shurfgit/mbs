@@ -46,10 +46,10 @@ aside {
 	position: fixed;
 	width: 60px;
 	height: calc(100% - 50px);
-	border-right: 1px solid #dedede;
+	border-right: 1px solid #a3a5a8;
 	z-index: 1;
 	top: 50px;
-	background-color: whitesmoke;
+	background-color: #f8f9f3;
 	padding: 5px;
 }
 
@@ -69,11 +69,11 @@ button {
 	font-size: 20px;
 	width: 46px;
 	height: 46px;
-	color: #c58d25;
+	color: #303a43;
 }
 
 button:hover {
-	background-color: #e4e4e4;
-	color: #ff006a;
+	background-color: #b1091d;
+	color: #eaeaea;
 }
 </style>

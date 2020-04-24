@@ -1,7 +1,5 @@
 <template>
-	<div class="about">
-		<MainContent msg="This is About Page" />
-	</div>
+	<MainContent msg="This is About Page" />
 </template>
 
 <script>

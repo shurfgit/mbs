@@ -28,15 +28,22 @@ export default {
 html
 	position: relative
 	min-height: 100%
-	background-color: #F3F3F3
 
-body
-	/* Margin bottom by footer height */
-	margin-bottom: 25px
-	background-color: #F3F3F3
+html, body
+	height: 100%
+	background-color: #eaeaea
 
 ul
 	list-style: none
 	padding: 0
 	margin: 0
+
+#app,
+.container-view,
+.structure-view,
+.detailed-view
+	height: 100%
+
+#content
+	height: calc(100% - 75px)
 </style>
