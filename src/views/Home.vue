@@ -22,12 +22,14 @@ export default {
 	float: left;
 	width: 70%;
 	padding: 10px;
+	overflow: auto;
 }
 
 .detailed-view {
 	width: 30%;
 	float: left;
 	padding: 10px;
+	overflow: auto;
 	border-left: 1px solid #303a43;
 }
 
