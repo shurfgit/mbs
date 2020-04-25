@@ -1,0 +1,7 @@
+task startServer(type: Exec) {
+    commandLine 'cmd', '/c', 'gradlew.bat', 'server:run'
+}
+
+task startClient(type: Exec) {
+    commandLine 'cmd', '/c', 'gradlew.bat', 'client:start'
+}
