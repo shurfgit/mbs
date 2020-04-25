@@ -19,17 +19,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
-
-Thumbs.db
-.DS_Store
-.gradle
-build/
-target/
-out/
-.idea
-*.iml
-*.ipr
-*.iws
-.project
-.settings
-.classpath
