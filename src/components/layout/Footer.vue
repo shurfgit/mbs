@@ -10,7 +10,7 @@ export default {
 
 <style scoped>
 footer {
-	background-color: #1f3102;
+	background-color: #d48a65;
 	min-height: 25px;
 	position: absolute;
 	bottom: 0;
@@ -18,5 +18,6 @@ footer {
 	/* Set the fixed height of the footer here */
 	height: 25px;
 	line-height: 25px; /* Vertically center the text there */
+	display: none;
 }
 </style>

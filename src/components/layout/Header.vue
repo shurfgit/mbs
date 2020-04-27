@@ -17,7 +17,7 @@ export default {
 
 <style scoped lang="sass">
 header
-	background-color: #1f3102
+	background-color: #351728
 	min-height: 50px
 
 ul

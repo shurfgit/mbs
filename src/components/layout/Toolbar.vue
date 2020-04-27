@@ -5,22 +5,26 @@
 				<router-link to="/storage">
 					<button type="button" class="btn">
 						<font-awesome-icon icon="book"></font-awesome-icon>
+						My Catalog
 					</button>
 				</router-link>
 			</li>
 			<li>
 				<button type="button" class="btn">
 					<font-awesome-icon icon="atlas"></font-awesome-icon>
+					Download
 				</button>
 			</li>
 			<li>
 				<button type="button" class="btn">
 					<font-awesome-icon icon="address-book"></font-awesome-icon>
+					Followed
 				</button>
 			</li>
 			<li>
 				<button type="button" class="btn">
 					<font-awesome-icon icon="adjust"></font-awesome-icon>
+					Export/Import
 				</button>
 			</li>
 			<li>
@@ -46,13 +50,12 @@ export default {
 <style scoped>
 aside {
 	position: fixed;
-	width: 60px;
+	width: 160px;
 	height: calc(100% - 50px);
-	border-right: 1px solid #a3a5a8;
 	z-index: 1;
 	top: 50px;
-	background-color: #f8f9f3;
 	padding: 5px;
+	border-right: 1px solid #351728;
 }
 
 ul {
@@ -63,19 +66,35 @@ ul {
 	justify-content: flex-start;
 }
 
+ul li {
+	width: 100%;
+	text-align: left;
+}
+
 ul li:last-child {
 	margin-top: auto;
 }
 
 button {
-	font-size: 20px;
-	width: 46px;
+	font-size: 16px;
 	height: 46px;
-	color: #303a43;
+	color: #351728;
+	width: 100%;
+	text-align: left;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+button:focus {
+	box-shadow: none;
+}
+
+button svg {
+	margin-right: 5px;
 }
 
 button:hover {
-	background-color: #b1091d;
-	color: #eaeaea;
+	background-color: #351728;
+	color: #e0e1e0;
 }
 </style>

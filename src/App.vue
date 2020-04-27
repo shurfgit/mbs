@@ -28,7 +28,7 @@ html
 
 html, body
 	height: 100%
-	background-color: #eaeaea
+	background-color: #f6f4f5
 
 ul
 	list-style: none

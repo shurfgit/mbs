@@ -51,13 +51,14 @@ export default {
 .detailed-view {
 	width: 30%;
 	float: left;
-	padding: 10px;
+	padding: 0 10px 10px;
 	overflow: auto;
-	border-left: 1px solid #303a43;
+	border-left: 1px solid #351728;
+	margin-top: 10px;
 }
 
 .container-view {
-	padding-left: 60px;
+	padding-left: 160px;
 }
 
 ul li {
