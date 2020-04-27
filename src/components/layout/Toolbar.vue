@@ -2,9 +2,11 @@
 	<aside>
 		<ul class="btn-group-vertical btn-group" role="group" aria-label="...">
 			<li>
-				<button type="button" class="btn">
-					<font-awesome-icon icon="book"></font-awesome-icon>
-				</button>
+				<router-link to="/storage">
+					<button type="button" class="btn">
+						<font-awesome-icon icon="book"></font-awesome-icon>
+					</button>
+				</router-link>
 			</li>
 			<li>
 				<button type="button" class="btn">

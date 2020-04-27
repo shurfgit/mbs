@@ -2,7 +2,6 @@
 	<div id="app">
 		<Header></Header>
 		<section id="content" role="main">
-			<Toolbar></Toolbar>
 			<router-view />
 		</section>
 		<Footer></Footer>
@@ -12,14 +11,12 @@
 <script>
 import Header from '@/components/layout/Header.vue';
 import Footer from '@/components/layout/Footer.vue';
-import Toolbar from '@/components/layout/Toolbar.vue';
 
 export default {
 	name: 'Home',
 	components: {
 		Header,
-		Footer,
-		Toolbar
+		Footer
 	}
 };
 </script>

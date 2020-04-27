@@ -3,7 +3,7 @@
 		<ul>
 			<li><router-link to="/"><font-awesome-icon icon="book-reader"></font-awesome-icon></router-link></li>
 			<li><router-link to="/about">About</router-link></li>
-			<li><router-link to="/Storage">Storage</router-link></li>
+			<li><router-link to="/catalog">Catalog</router-link></li>
 		</ul>
 		<div id="user-menu"></div>
 	</header>

@@ -1,15 +1,19 @@
 <template>
-	<div class="container-view">
-		<ul class="structure-view">
-			<Categories
-				class="category-item"
-				v-for="category in this.$store.state.categories"
-				:item="category"
-				:key="category.id"
-			></Categories>
-		</ul>
-		<div class="detailed-view">
-			<Details></Details>
+	<div class="full-height">
+		<Toolbar></Toolbar>
+		<div class="container-view">
+			<ul class="structure-view">
+				<CategoryActions></CategoryActions>
+				<Categories
+					class="category-item"
+					v-for="category in this.$store.state.categories"
+					:item="category"
+					:key="category.id"
+				></Categories>
+			</ul>
+			<div class="detailed-view">
+				<Details></Details>
+			</div>
 		</div>
 	</div>
 </template>
@@ -18,12 +22,16 @@
 // @ is an alias to /src
 import Details from '../components/structure/Details';
 import Categories from '../components/structure/Categories';
+import Toolbar from '../components/layout/Toolbar';
+import CategoryActions from '../components/actionMenus/CategoryActions';
 
 export default {
 	name: 'Storage',
 	components: {
 		Details,
-		Categories
+		Categories,
+		Toolbar,
+		CategoryActions
 	},
 	data: function() {
 		return {};
@@ -52,7 +60,11 @@ export default {
 	padding-left: 60px;
 }
 
-ul ul {
-	margin-left: 15px;
+ul li {
+	user-select: none;
+}
+
+.full-height {
+	height: 100%;
 }
 </style>
