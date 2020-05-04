@@ -1,16 +1,22 @@
 <template>
 	<!-- the demo root element -->
 	<div>
-		{{ this.$store.state.selectedItem.name }}
-		{{ this.$store.state.selectedItem.description }}
+		{{ selectedItem.name }}
+		{{ selectedItem.description }}
 	</div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
 	name: 'Details',
 	data: function() {
 		return {};
+	},
+	computed: {
+		...mapState({
+			selectedItem: state => state.categories.selectedItem
+		})
 	},
 	methods: {}
 };

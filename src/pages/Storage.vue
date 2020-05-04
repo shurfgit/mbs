@@ -3,7 +3,7 @@
 		<ul class="structure-view">
 			<Categories
 				class="category-item"
-				v-for="category in this.$store.state.categories"
+				v-for="category in categories"
 				:item="category"
 				:key="category.id"
 			></Categories>
@@ -18,7 +18,7 @@
 // @ is an alias to /src
 import Details from '../components/structure/Details';
 import Categories from '../components/structure/Categories';
-
+import { mapState } from 'vuex'
 export default {
 	name: 'Storage',
 	components: {
@@ -27,6 +27,12 @@ export default {
 	},
 	data: function() {
 		return {};
+	},
+	computed: {
+		...mapState({
+			authors: state => state.fantLabApi.authors,
+			categories: state => state.categories.categories
+		})
 	},
 	methods: {}
 };

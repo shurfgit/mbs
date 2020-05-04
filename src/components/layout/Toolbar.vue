@@ -36,8 +36,14 @@
 </template>
 
 <script>
+import { GET_AUTHORS } from '@/constants/mutation-types'
 export default {
-	name: 'Toolbar'
+	name: 'Toolbar',
+	methods: {
+		getAuthors() {
+			this.$store.dispatch(GET_AUTHORS);
+		}
+	}
 };
 </script>
 
