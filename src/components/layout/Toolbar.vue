@@ -3,39 +3,41 @@
 		<ul class="btn-group-vertical btn-group" role="group" aria-label="...">
 			<li>
 				<router-link to="/storage">
-					<button type="button" class="btn">
+					<span>
 						<font-awesome-icon icon="book"></font-awesome-icon>
 						My Catalog
-					</button>
+					</span>
 				</router-link>
 			</li>
 			<li>
-				<button type="button" class="btn">
+				<span>
 					<font-awesome-icon icon="atlas"></font-awesome-icon>
 					Download
-				</button>
+				</span>
 			</li>
 			<li>
-				<button type="button" class="btn">
+				<span>
 					<font-awesome-icon icon="address-book"></font-awesome-icon>
 					Followed
-				</button>
+				</span>
 			</li>
 			<li>
-				<button type="button" class="btn">
+				<span>
 					<font-awesome-icon icon="adjust"></font-awesome-icon>
 					Export/Import
-				</button>
+				</span>
 			</li>
 			<li>
-				<button type="button" class="btn">
-					<font-awesome-icon icon="ankh"></font-awesome-icon>
-				</button>
+				<span>
+					<font-awesome-icon icon="info-circle"></font-awesome-icon>
+					Help
+				</span>
 			</li>
 			<li>
-				<button type="button" class="btn">
-					<font-awesome-icon icon="angle-double-right"></font-awesome-icon>
-				</button>
+				<span @click="toggleToolbar">
+					<font-awesome-icon :icon="this.isToolbarCollapsed ? 'angle-double-right' : 'angle-double-left'"></font-awesome-icon>
+					{{ this.isToolbarCollapsed ? '' : 'Collapse' }}
+				</span>
 			</li>
 		</ul>
 	</aside>
@@ -43,58 +45,76 @@
 
 <script>
 export default {
-	name: 'Toolbar'
+	name: 'Toolbar',
+	data: function() {
+		return {
+			isToolbarCollapsed: false
+		};
+	},
+	methods: {
+		toggleToolbar() {
+			this.isToolbarCollapsed = !this.isToolbarCollapsed;
+			document.querySelector('aside').classList[this.isToolbarCollapsed ? 'add' : 'remove']('collapsed');
+			document.querySelector('.content-wrapper').classList[this.isToolbarCollapsed ? 'add' : 'remove']('small-toolbar');
+		}
+	}
 };
 </script>
 
-<style scoped>
-aside {
-	position: fixed;
-	width: 160px;
-	height: calc(100% - 50px);
-	z-index: 1;
-	top: 50px;
-	padding: 5px;
-	border-right: 1px solid #351728;
-}
+<style scoped lang="sass">
+aside
+	position: fixed
+	width: 160px
+	height: calc(100% - 50px)
+	z-index: 1
+	top: 50px
+	background-color: #1a1b20
 
-ul {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: flex-start;
-}
+	&.collapsed
+		width: 50px
 
-ul li {
-	width: 100%;
-	text-align: left;
-}
+ul
+	height: 100%
+	display: flex
+	align-items: center
+	flex-direction: column
+	justify-content: flex-start
 
-ul li:last-child {
-	margin-top: auto;
-}
+	li
+		width: 100%
+		text-align: left
+		cursor: pointer
 
-button {
-	font-size: 16px;
-	height: 46px;
-	color: #351728;
-	width: 100%;
-	text-align: left;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
+		&:last-child
+			margin-top: auto
 
-button:focus {
-	box-shadow: none;
-}
+		a
+			display: block
+			text-decoration: none
 
-button svg {
-	margin-right: 5px;
-}
+		span
+			border-left: 4px solid transparent
+			font-size: 14px
+			height: 46px
+			color: #f5f5f5
+			width: 100%
+			text-align: left
+			text-overflow: ellipsis
+			white-space: nowrap
+			display: block
+			padding: 12px 16px
+			cursor: pointer
+			overflow: hidden
 
-button:hover {
-	background-color: #351728;
-	color: #e0e1e0;
-}
+			&:hover
+				color: #eaaa3c
+
+			svg
+				margin-right: 10px
+
+.router-link-exact-active span
+	border-left: 4px solid #ba4613
+
+.router-link-exact-active span
+	color: #ff4e00
 </style>

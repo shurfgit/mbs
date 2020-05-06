@@ -17,7 +17,7 @@ export default {
 
 <style scoped lang="sass">
 header
-	background-color: #351728
+	background-color: #ba4613
 	min-height: 50px
 
 ul
@@ -43,7 +43,8 @@ ul
 
 		a
 			color: #eaeaea
-			font-size: 20px
+			font-size: 18px
 			text-decoration: none
 			vertical-align: text-top
+			line-height: 30px
 </style>

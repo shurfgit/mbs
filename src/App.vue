@@ -29,6 +29,7 @@ html
 html, body
 	height: 100%
 	background-color: #f6f4f5
+	font-family: 'Open Sans', sans-serif
 
 ul
 	list-style: none

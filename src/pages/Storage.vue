@@ -1,19 +1,23 @@
 <template>
-	<div class="full-height">
+	<div class="full-height content-wrapper">
 		<Toolbar></Toolbar>
-		<div class="container-view">
-			<ul class="structure-view">
-				<CategoryActions></CategoryActions>
-				<Categories
-					class="category-item"
-					v-for="category in this.$store.state.categories"
-					:item="category"
-					:key="category.id"
-				></Categories>
-			</ul>
-			<div class="detailed-view">
-				<Details></Details>
-			</div>
+		<div class="container-view table-responsive">
+			<CategoryActions></CategoryActions>
+			<table class="table">
+				<tbody>
+					<Categories
+						class="category-item"
+						v-for="category in visibleCategories"
+						:item="category"
+						:key="category.id"
+						:data-id="category.id"
+						:data-level="category.level"
+					></Categories>
+				</tbody>
+			</table>
+		</div>
+		<div class="detailed-view">
+			<Details></Details>
 		</div>
 	</div>
 </template>
@@ -36,36 +40,72 @@ export default {
 	data: function() {
 		return {};
 	},
-	methods: {}
+	methods: {},
+	computed: {
+		visibleCategories() {
+			let a = this.$store.state.categories.filter(category => {
+				let areParentsOpened = category => {
+					if (category.parent === null) {
+						return true;
+					}
+					let parentCategory = this.$store.getters.getCategoryById(category.parent);
+					if (parentCategory.isOpened) {
+						if (parentCategory.parent !== null) {
+							return areParentsOpened(
+								this.$store.getters.getCategoryById(category.parent)
+							);
+						}
+						return true;
+					}
+					return false;
+				};
+
+				if (category.parent === null) {
+					return true;
+				}
+				return areParentsOpened(category);
+			});
+			console.log(a);
+			return a;
+		}
+	}
 };
 </script>
 
 <style scoped>
-.structure-view {
-	float: left;
-	width: 70%;
-	padding: 10px;
-	overflow: auto;
-}
-
 .detailed-view {
 	width: 30%;
 	float: left;
 	padding: 0 10px 10px;
 	overflow: auto;
-	border-left: 1px solid #351728;
+	border-left: 1px solid #ba4613;
 	margin-top: 10px;
 }
 
 .container-view {
-	padding-left: 160px;
+	padding: 10px 10px 10px 170px;
+	float: left;
+	width: 70%;
+	overflow: auto;
 }
 
 ul li {
 	user-select: none;
 }
 
-.full-height {
+.content-wrapper {
 	height: 100%;
+}
+
+.content-wrapper.full-width .container-view {
+	width: 100%;
+}
+
+.content-wrapper.small-toolbar .container-view {
+	padding-left: 60px;
+}
+
+.content-wrapper.full-width .detailed-view {
+	display: none;
 }
 </style>
