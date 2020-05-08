@@ -22,10 +22,12 @@
 				</span>
 			</li>
 			<li>
-				<span>
-					<font-awesome-icon icon="adjust"></font-awesome-icon>
-					Export/Import
-				</span>
+				<router-link to="/export-import">
+					<span>
+						<font-awesome-icon icon="adjust"></font-awesome-icon>
+						Export/Import
+					</span>
+				</router-link>
 			</li>
 			<li>
 				<span>
