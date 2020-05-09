@@ -47,10 +47,6 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "indent": [
-        "error",
-        "tab"
-      ]
     }
   },
   "prettier": {

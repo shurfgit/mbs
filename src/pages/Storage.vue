@@ -82,13 +82,6 @@ export default {
 	margin-top: 10px;
 }
 
-.container-view {
-	padding: 10px 10px 10px 170px;
-	float: left;
-	width: 70%;
-	overflow: auto;
-}
-
 ul li {
 	user-select: none;
 }

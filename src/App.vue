@@ -44,4 +44,10 @@ ul
 
 #content
 	height: calc(100% - 75px)
+
+.container-view
+	padding: 10px 10px 10px 170px
+	float: left
+	width: 70%
+	overflow: auto
 </style>
