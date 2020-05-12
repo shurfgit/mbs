@@ -12,6 +12,7 @@
                     >
                     </CategoriesSelection>
                 </ul>
+                <button class="save-categories" @click="exportCategories()">Save</button>
             </div>
         </div>
     </div>
@@ -26,6 +27,9 @@
         methods: {
             getCategoryById(id) {
                 return this.categories.find(item => item.id === id);
+            },
+            exportCategories() {
+                console.log(this.$children['CategoriesSelection']);
             }
         },
         computed: {
